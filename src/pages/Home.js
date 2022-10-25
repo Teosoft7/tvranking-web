@@ -1,10 +1,16 @@
 import React from "react";
 
+import Box from "@mui/material/Box";
+
 const HomePage = () => {
   return (
-    <div>
+    <Box>
       <h5>THIS IS HOME PAGE</h5>
-    </div>
+      <h5>THIS IS HOME PAGE</h5>
+      <h5>THIS IS HOME PAGE</h5>
+      <h5>THIS IS HOME PAGE</h5>
+      <h5>THIS IS HOME PAGE</h5>
+    </Box>
   );
 };
 
