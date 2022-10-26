@@ -7,9 +7,6 @@ import IconButton from "@mui/material/IconButton";
 // import MyLocationIcon from "@mui/icons-material/MyLocation";
 // import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import TodayIcon from "@mui/icons-material/Today";
-
-import QueryToolbar from "../components/QueryToolbar";
 
 const MainNavigation = (props) => {
   return (

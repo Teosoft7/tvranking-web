@@ -10,7 +10,8 @@ import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 
 import AreaButtonGroup from "./AreaButtonGroup";
 
-const QueryToolbar = () => {
+const QueryToolbar = (props) => {
+  const { date, onDateChange, onAreaChange } = props;
   const [value, setValue] = useState(dayjs("2022-10-01"));
 
   return (
