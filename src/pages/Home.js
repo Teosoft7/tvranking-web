@@ -1,15 +1,12 @@
 import React from "react";
 
 import Box from "@mui/material/Box";
+import QueryToolbar from "../components/QueryToolbar";
 
 const HomePage = () => {
   return (
     <Box>
-      <h5>THIS IS HOME PAGE</h5>
-      <h5>THIS IS HOME PAGE</h5>
-      <h5>THIS IS HOME PAGE</h5>
-      <h5>THIS IS HOME PAGE</h5>
-      <h5>THIS IS HOME PAGE</h5>
+      <QueryToolbar />
     </Box>
   );
 };
