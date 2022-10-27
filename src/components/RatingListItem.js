@@ -31,7 +31,7 @@ const RatingListItem = (props) => {
                   <h5>{item.channel}</h5>
                 </Grid>
                 <Grid xs={12}>
-                  <h5>{item.program}</h5>
+                  <h5>{item.programme}</h5>
                 </Grid>
               </Grid>
             </Grid>
