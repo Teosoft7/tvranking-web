@@ -69,10 +69,13 @@ const RatingList = (props) => {
 
   return (
     <div>
-      {ratings &&
-        ratings.map((item) => {
-          return <RatingListItem item={item} />;
-        })}
+      {ratings ? (
+        ratings.map((item, index) => {
+          return <RatingListItem key={index} item={item} />;
+        })
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

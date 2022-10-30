@@ -2,17 +2,19 @@ import { useState } from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
 
-const AreaButtonGroup = () => {
-  const [area, setArea] = useState("gse");
+const AreaButtonGroup = (props) => {
+  const { area, onAreaChange } = props;
+  const [newArea, setNewArea] = useState(area);
 
-  const handleChange = (event, newArea) => {
-    setArea(newArea);
+  const handleChange = (event, newValue) => {
+    setNewArea(newValue);
+    onAreaChange(newValue);
   };
 
   return (
     <ToggleButtonGroup
       color="primary"
-      value={area}
+      value={newArea}
       exclusive
       aria-label="area"
       onChange={handleChange}

@@ -11,8 +11,9 @@ import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 import AreaButtonGroup from "./AreaButtonGroup";
 
 const QueryToolbar = (props) => {
-  const { date, onDateChange, onAreaChange } = props;
-  const [value, setValue] = useState(dayjs("2022-10-01"));
+  const { area, date, onDateChange, onAreaChange } = props;
+  const [dateValue, setDateValue] = useState(dayjs(date));
+  const [areaValue, setAreaValue] = useState(area);
 
   return (
     <Toolbar>
@@ -20,9 +21,12 @@ const QueryToolbar = (props) => {
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <MobileDatePicker
             label="방송일자"
-            value={value}
+            value={dateValue}
             onChange={(newValue) => {
-              setValue(newValue);
+              const newDate = dayjs(newValue).format("YYYY-MM-DD");
+              console.log(`new date : ${newDate}`);
+              setDateValue(newDate);
+              onDateChange(newDate);
             }}
             renderInput={(params) => (
               <TextField
@@ -35,7 +39,13 @@ const QueryToolbar = (props) => {
           />
         </LocalizationProvider>
       </Box>
-      <AreaButtonGroup />
+      <AreaButtonGroup
+        onAreaChange={(newValue) => {
+          setAreaValue(newValue);
+          onAreaChange(newValue);
+        }}
+        area={areaValue}
+      />
     </Toolbar>
   );
 };
