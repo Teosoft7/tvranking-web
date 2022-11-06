@@ -61,7 +61,7 @@ export const getRating = async (date, area, category) => {
       coll_name = "new_terrestrial_";
   }
 
-  if (area == 1) {
+  if (area === 1) {
     coll_name += "gse";
   } else {
     coll_name += "nat";
