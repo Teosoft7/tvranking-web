@@ -2,6 +2,8 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import Grid from "@mui/material/Grid";
 
+import ChannelLogo from "./ChannelLogo";
+
 const RatingListItem = (props) => {
   const { item } = props;
 
@@ -28,7 +30,7 @@ const RatingListItem = (props) => {
             <Grid item container xs={8}>
               <Grid container sx={{ p: 1 }}>
                 <Grid xs={12}>
-                  <h5>{item.channel}</h5>
+                  <ChannelLogo channel={item.channel} />
                 </Grid>
                 <Grid xs={12}>
                   <h5>{item.programme}</h5>
