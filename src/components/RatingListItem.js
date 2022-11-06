@@ -23,22 +23,22 @@ const RatingListItem = (props) => {
             console.log("List Item Clieck");
           }}
         >
-          <Grid container spacing={0}>
-            <Grid item xs={2}>
-              <h5>{item.rank}</h5>
+          <Grid container spacing={1}>
+            <Grid item xs={1}>
+              <h3>{item.rank}</h3>
             </Grid>
-            <Grid item container xs={8}>
+            <Grid item container xs={9}>
               <Grid container sx={{ p: 1 }}>
                 <Grid xs={12}>
                   <ChannelLogo channel={item.channel} />
                 </Grid>
                 <Grid xs={12}>
-                  <h5>{item.programme}</h5>
+                  <h4>{item.programme}</h4>
                 </Grid>
               </Grid>
             </Grid>
             <Grid item xs={2}>
-              <h5>{item.rating}</h5>
+              <h3>{item.rating}</h3>
             </Grid>
           </Grid>
         </ListItemButton>
