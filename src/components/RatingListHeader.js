@@ -6,10 +6,10 @@ const RatingListHeader = () => {
   return (
     <Toolbar>
       <Grid container spacing={1}>
-        <Grid item xs={1}>
+        <Grid item xs={2}>
           <h3>Rank</h3>
         </Grid>
-        <Grid item container xs={9}>
+        <Grid item container xs={8}>
           <h3>Programme</h3>
         </Grid>
         <Grid item xs={2}>

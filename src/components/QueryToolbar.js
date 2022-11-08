@@ -40,7 +40,7 @@ const QueryToolbar = (props) => {
             />
           </LocalizationProvider>
         </Grid>
-        <Grid item xs={2} justifyContent="flex-end">
+        <Grid item xs={4} justifyContent="flex-end">
           <AreaButtonGroup
             onAreaChange={(newValue) => {
               setAreaValue(newValue);
