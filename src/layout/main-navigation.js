@@ -1,14 +1,16 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import Logo from "./logo";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-// import MenuIcon from "@mui/icons-material/Menu";
-// import MyLocationIcon from "@mui/icons-material/MyLocation";
-// import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 const MainNavigation = (props) => {
+  const navigate = useNavigate();
+
   return (
     <Box>
       <AppBar position="static">
@@ -23,6 +25,7 @@ const MainNavigation = (props) => {
             onClick={() => {
               //show modal help page
               console.log("Help Icon Clicked");
+              navigate("/about");
             }}
           >
             <HelpOutlineIcon />
