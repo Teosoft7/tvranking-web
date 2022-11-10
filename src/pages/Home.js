@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import QueryToolbar from "../components/QueryToolbar";
 import RatingList from "./RatingList";
 import { getYesterdaysDate } from "../libraries/common";
-// import { getMaxDate, getRating } from "../libraries/firebase";
+import { getMaxDate } from "../libraries/firebase";
 import { getRatings } from "../libraries/api"; // get rating from API
 
 const HomePage = () => {
@@ -12,16 +12,22 @@ const HomePage = () => {
   const [area, setArea] = useState(0);
   const [ratings, setRatings] = useState([]);
 
-  console.log(`yesterday is ${date}`);
-
   useEffect(() => {
-    async function getRefresh() {
+    const getRefresh = async () => {
       const newRatings = await getRatings(date, area, 1);
       console.log("getRefresh", newRatings);
       setRatings(newRatings);
-    }
+    };
     getRefresh();
   }, [date, area]);
+
+  useEffect(() => {
+    const refreshFunc = async () => {
+      const maxDate = await getMaxDate();
+      setDate(maxDate);
+    };
+    refreshFunc();
+  }, []);
 
   const handleDateChange = (value) => {
     setDate(value);
