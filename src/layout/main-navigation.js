@@ -23,8 +23,7 @@ const MainNavigation = (props) => {
             aria-label="help"
             color="inherit"
             onClick={() => {
-              //show modal help page
-              console.log("Help Icon Clicked");
+              // help icon button clicked
               navigate("/about");
             }}
           >

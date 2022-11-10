@@ -16,7 +16,7 @@ const QueryToolbar = (props) => {
   const [areaValue, setAreaValue] = useState(area);
 
   return (
-    <Toolbar>
+    <Toolbar sx={{ position: "static" }}>
       <Grid container spacing={1}>
         <Grid item xs>
           <LocalizationProvider dateAdapter={AdapterDayjs}>

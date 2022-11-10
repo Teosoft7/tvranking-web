@@ -45,7 +45,9 @@ const HomePage = () => {
         area={area}
         onAreaChange={handleAreaChange}
       />
-      <RatingList ratings={ratings} />
+      <Box>
+        <RatingList ratings={ratings} />
+      </Box>
     </Box>
   );
 };

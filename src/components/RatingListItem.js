@@ -1,5 +1,6 @@
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
+import Divider from "@mui/material/Divider";
 import Grid from "@mui/material/Grid";
 
 import ChannelLogo from "./ChannelLogo";
@@ -12,7 +13,7 @@ const RatingListItem = (props) => {
       <ListItem
         alignItems="flex-start"
         sx={{
-          m: 1,
+          m: 0.5,
           p: 0.5,
           margin: "auto",
           flexGrow: 1,
@@ -23,13 +24,19 @@ const RatingListItem = (props) => {
             console.log("List Item Clieck");
           }}
         >
-          <Grid container spacing={1}>
-            <Grid item xs={1}>
+          <Grid sx={{ height: 52 }} container spacing={1}>
+            <Grid item aligItems="center" justifyContent="center" xs={1}>
               <h3>{item.rank}</h3>
             </Grid>
             <Grid item container xs={9}>
-              <Grid container sx={{ p: 1 }}>
-                <Grid xs={12}>
+              <Grid
+                aligItems="center"
+                justifyContent="center"
+                direction="row"
+                container
+                sx={{ p: 1 }}
+              >
+                <Grid sx={{ height: 3 }} xs={12}>
                   <ChannelLogo channel={item.channel} />
                 </Grid>
                 <Grid xs={12}>
@@ -37,12 +44,13 @@ const RatingListItem = (props) => {
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={2}>
-              <h3>{item.rating}</h3>
+            <Grid aligItems="center" justifyContent="center" item xs={2}>
+              <h4>{item.rating}%</h4>
             </Grid>
           </Grid>
         </ListItemButton>
       </ListItem>
+      <Divider />
     </div>
   );
 };
