@@ -1,3 +1,5 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import Divider from "@mui/material/Divider";
@@ -7,6 +9,7 @@ import ChannelLogo from "./ChannelLogo";
 
 const RatingListItem = (props) => {
   const { item } = props;
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -22,6 +25,7 @@ const RatingListItem = (props) => {
         <ListItemButton
           onClick={() => {
             console.log("List Item Clieck");
+            navigate("/weekly_chart", { state: { item: item } }); // need to pass channel, programme
           }}
         >
           <Grid sx={{ height: 52 }} container spacing={1}>
