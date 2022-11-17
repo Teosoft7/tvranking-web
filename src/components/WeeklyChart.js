@@ -1,15 +1,19 @@
 import React from "react";
+import { VictoryChart, VictoryArea } from "victory";
 
 const WeeklyChart = (props) => {
-  const { item } = props;
-
-  console.log("Weekly chart:", props);
+  const { data } = props;
 
   return (
     <div>
-      <h5>Weekly Chart</h5>
-      <h5>{item.channel}</h5>
-      <h5>{item.programme}</h5>
+      <VictoryChart>
+        <VictoryArea
+          data={data}
+          x="labels"
+          y="ratings"
+          style={{ data: { fill: "#4a15ad" } }}
+        />
+      </VictoryChart>
     </div>
   );
 };

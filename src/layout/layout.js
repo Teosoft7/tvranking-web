@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import MainNavigation from "./main-navigation";
 
 const Layout = (props) => {

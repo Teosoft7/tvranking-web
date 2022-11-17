@@ -65,10 +65,7 @@ export const getRating = async (date, area, category) => {
     coll_name += "nat";
   }
 
-  console.log("coll name ", coll_name, date);
-
-  const login = await signInAnonymously(auth);
-
+  const _ = await signInAnonymously(auth);
   let ratingRef = collection(db, coll_name);
   const q = query(ratingRef, where("date", "==", date), orderBy("rank"));
   const docs = await getDocs(q);
@@ -104,15 +101,10 @@ export const getLast8WeeksRatings = async (coll_name, channel, program) => {
   let ratings = [];
   let index = 8;
   docs.forEach((doc) => {
-    // doc.data() is never undefined for query doc snapshots
-
-    console.log(doc.data());
     const item = doc.data();
     const date = item.date.slice(5);
     const rating = parseFloat(item.rating);
-
     const chartData = { x: index--, y: rating, xlabel: date };
-
     ratings.unshift(chartData);
   });
 
@@ -120,8 +112,6 @@ export const getLast8WeeksRatings = async (coll_name, channel, program) => {
     labels: ratings.map((item) => item.xlabel),
     datasets: [{ data: ratings.map((item) => item.y) }],
   };
-
-  console.log(chart_data);
 
   return chart_data;
 };
