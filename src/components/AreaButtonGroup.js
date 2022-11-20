@@ -19,8 +19,8 @@ const AreaButtonGroup = (props) => {
       aria-label="area"
       onChange={handleChange}
     >
-      <ToggleButton value={0}>수도권</ToggleButton>
-      <ToggleButton value={1}>전국</ToggleButton>
+      <ToggleButton value={0}>전국</ToggleButton>
+      <ToggleButton value={1}>수도권</ToggleButton>
     </ToggleButtonGroup>
   );
 };

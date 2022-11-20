@@ -55,3 +55,8 @@ code {
   box-sizing: border-box;
 }
  */
+
+/* Prevent scrollbar during animation */
+.effect {
+  overflow: hidden;
+}
