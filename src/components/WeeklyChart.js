@@ -11,7 +11,7 @@ const WeeklyChart = (props) => {
           data={data}
           x="labels"
           y="ratings"
-          style={{ data: { fill: "#4a15ad" } }}
+          style={{ data: { fill: "#9b5de5" } }}
         />
       </VictoryChart>
     </div>
