@@ -51,9 +51,9 @@ const RatingChart = (props) => {
       </Toolbar>
       <Box component="span" sx={{ p: 2 }}>
         {item && (
-          <h4 style={{ textAlign: "center" }}>
+          <h3 style={{ textAlign: "center" }}>
             {item.channel} - {item.programme}
-          </h4>
+          </h3>
         )}
       </Box>
       {chartData && <WeeklyChart data={chartData} />}
