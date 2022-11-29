@@ -16,8 +16,7 @@ import { getMaxDate } from "../libraries/firebase";
 import { getRatings } from "../libraries/api"; // get rating from API
 
 const ListPage = () => {
-  const [tab, setTab] = useState(0);
-
+  const [tab, setTab] = useState(1);
   const [date, setDate] = useState(getYesterdaysDate());
   const [area, setArea] = useState(0);
   const [ratings, setRatings] = useState([]);
@@ -31,14 +30,14 @@ const ListPage = () => {
     setIsLoading(true);
     setRatings([]);
     const getRefresh = async () => {
-      const newRatings = await getRatings(date, area, 1);
+      const newRatings = await getRatings(date, area, tab);
       setTimeout(() => {
         setIsLoading(false);
         setRatings(newRatings);
       }, 1000);
     };
     getRefresh();
-  }, [date, area]);
+  }, [date, area, tab]);
 
   useEffect(() => {
     const refreshFunc = async () => {
@@ -87,8 +86,8 @@ const ListPage = () => {
               indicatorColor="secondary"
               textColor="inherit"
             >
-              <Tab label="지상파" value={0} />
-              <Tab label="케이블" value={1} />
+              <Tab label="지상파" value={1} />
+              <Tab label="케이블" value={3} />
               <Tab label="종합편성" value={2} />
             </TabList>
           </AppBar>
