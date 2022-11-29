@@ -9,7 +9,7 @@ import { getLast8WeeksRatings } from "../libraries/firebase";
 import WeeklyChart from "../components/WeeklyChart";
 import { Toolbar } from "@mui/material";
 
-const RatingChart = (props) => {
+const WeeklyChartPage = (props) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -61,4 +61,4 @@ const RatingChart = (props) => {
   );
 };
 
-export default RatingChart;
+export default WeeklyChartPage;
