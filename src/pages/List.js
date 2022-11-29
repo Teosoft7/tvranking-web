@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 
+import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import CircularProgress from "@mui/material/CircularProgress";
+import Tab from "@mui/material/Tab";
+import TabContext from "@mui/lab/TabContext";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 import QueryToolbar from "../components/QueryToolbar";
 import RatingList from "../components/RatingList";
@@ -11,10 +16,16 @@ import { getMaxDate } from "../libraries/firebase";
 import { getRatings } from "../libraries/api"; // get rating from API
 
 const ListPage = () => {
+  const [tab, setTab] = useState(0);
+
   const [date, setDate] = useState(getYesterdaysDate());
   const [area, setArea] = useState(0);
   const [ratings, setRatings] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleChange = (event, newValue) => {
+    setTab(newValue);
+  };
 
   useEffect(() => {
     setIsLoading(true);
@@ -47,12 +58,6 @@ const ListPage = () => {
 
   return (
     <Box>
-      <QueryToolbar
-        date={date}
-        onDateChange={handleDateChange}
-        area={area}
-        onAreaChange={handleAreaChange}
-      />
       {isLoading && (
         <Box
           sx={{
@@ -72,13 +77,38 @@ const ListPage = () => {
           </Stack>
         </Box>
       )}
-      {ratings.length > 0 ? (
-        <Box>
-          <RatingList ratings={ratings} />
+      <TabContext value={tab}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <AppBar position="static">
+            <TabList
+              onChange={handleChange}
+              aria-label="Channel Category"
+              variant="fullWidth"
+              indicatorColor="secondary"
+              textColor="inherit"
+            >
+              <Tab label="지상파" value={0} />
+              <Tab label="케이블" value={1} />
+              <Tab label="종합편성" value={2} />
+            </TabList>
+          </AppBar>
+          <QueryToolbar
+            date={date}
+            onDateChange={handleDateChange}
+            area={area}
+            onAreaChange={handleAreaChange}
+          />
         </Box>
-      ) : (
-        <></>
-      )}
+        {ratings.length > 0 ? (
+          <TabPanel value={tab}>
+            <Box>
+              <RatingList ratings={ratings} />
+            </Box>
+          </TabPanel>
+        ) : (
+          <></>
+        )}
+      </TabContext>
     </Box>
   );
 };
