@@ -84,9 +84,9 @@ export const getRating = async (date, area, category) => {
 };
 
 export const getLast8WeeksRatings = async (coll_name, channel, program) => {
-  console.log(program);
-  console.log(channel);
-  console.log(coll_name);
+  // console.log(program);
+  // console.log(channel);
+  // console.log(coll_name);
 
   let ratingRef = collection(db, coll_name);
   const q = query(
