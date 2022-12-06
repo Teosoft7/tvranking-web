@@ -31,9 +31,31 @@ const ListPage = () => {
     setRatings([]);
     const getRefresh = async () => {
       const newRatings = await getRatings(date, area, tab);
+
+      // add collection name for accessing firestore
+      let coll = "new_";
+      switch (tab) {
+        case 3:
+          coll += "cable_";
+          break;
+        case 2:
+          coll += "general_";
+          break;
+        default:
+          coll += "terrestrial_";
+      }
+
+      if (area === 1) {
+        coll += "gse";
+      } else {
+        coll += "nat";
+      }
+      const result = newRatings.map((item) => {
+        return { ...item, collection: coll };
+      });
       setTimeout(() => {
         setIsLoading(false);
-        setRatings(newRatings);
+        setRatings(result);
       }, 1000);
     };
     getRefresh();
