@@ -12,7 +12,6 @@ export const getRatings = async (date, area, category) => {
   url += `&area=${area}`;
 
   const res = await fetch(url);
-  const data = res.json();
-
+  let data = res.json();
   return data;
 };

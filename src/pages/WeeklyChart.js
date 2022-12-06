@@ -19,7 +19,7 @@ const WeeklyChartPage = (props) => {
   useEffect(() => {
     const refresh = async () => {
       const data = await getLast8WeeksRatings(
-        "new_terrestrial_gse",
+        item.collection,
         item.channel,
         item.programme
       );
