@@ -12,8 +12,21 @@ const RatingListItem = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <ListItem
+    <div className="grid grid-rows-3 grid-flow-col gap-1 ">
+      <div className="col-span-2 text-md text-black font-semibold text-left">
+        {item.rank}
+      </div>
+      <div className="row-span-3 col-span-11 items-start">
+        <div className="row-span-1">
+          <ChannelLogo channel={item.channel} />
+        </div>
+        <div className="row-span-2">{item.programme}</div>
+      </div>
+      <div className="text-md text-black font-semibold text-center">
+        {item.rating}%
+      </div>
+
+      {/* <ListItem
         alignItems="flex-start"
         sx={{
           m: 0.5,
@@ -54,7 +67,7 @@ const RatingListItem = (props) => {
           </Grid>
         </ListItemButton>
       </ListItem>
-      <Divider />
+      <Divider /> */}
     </div>
   );
 };

@@ -100,19 +100,6 @@ const ListPage = () => {
       )}
       <TabContext value={tab}>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <AppBar position="static">
-            <TabList
-              onChange={handleChange}
-              aria-label="Channel Category"
-              variant="fullWidth"
-              indicatorColor="secondary"
-              textColor="inherit"
-            >
-              <Tab label="지상파" value={1} />
-              <Tab label="케이블" value={3} />
-              <Tab label="종합편성" value={2} />
-            </TabList>
-          </AppBar>
           <QueryToolbar
             date={date}
             onDateChange={handleDateChange}
@@ -120,6 +107,20 @@ const ListPage = () => {
             onAreaChange={handleAreaChange}
           />
         </Box>
+        <AppBar position="static " color="secondary">
+          <TabList
+            onChange={handleChange}
+            aria-label="Channel Category"
+            variant="fullWidth"
+            indicatorColor="secondary"
+            textColor="inherit"
+          >
+            <Tab label="지상파" value={1} />
+            <Tab label="케이블" value={3} />
+            <Tab label="종합편성" value={2} />
+          </TabList>
+        </AppBar>
+
         {ratings.length > 0 ? (
           <TabPanel value={tab}>
             <Box>
