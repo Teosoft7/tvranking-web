@@ -1,22 +1,20 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import Toolbar from "@mui/material/Toolbar";
 
 const RatingListHeader = () => {
   return (
-    <Toolbar sx={{ background: "#86BBD8" }}>
-      <Grid container spacing={1}>
-        <Grid item xs={2}>
-          <h3>Rank</h3>
-        </Grid>
-        <Grid item container xs={8}>
-          <h3>Programme</h3>
-        </Grid>
-        <Grid item xs={2}>
-          <h3>Rating</h3>
-        </Grid>
-      </Grid>
-    </Toolbar>
+    <div className="container ">
+      <div className="grid grid-rows-1 grid-cols-12 grid-flow-col gap-1 items-center h-8">
+        <div className="col-span-2 text-md text-black font-semibold text-center">
+          <h4>Rank</h4>
+        </div>
+        <div className="col-span-8 text-md text-black font-semibold text-left">
+          <h4>Programme</h4>
+        </div>
+        <div className="col-span-2 text-md text-black font-semibold text-center">
+          <h4>Rating</h4>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -12,62 +12,26 @@ const RatingListItem = (props) => {
   const navigate = useNavigate();
 
   return (
-    <div className="grid grid-rows-3 grid-flow-col gap-1 ">
-      <div className="col-span-2 text-md text-black font-semibold text-left">
+    <div
+      className="grid grid-rows-2 grid-flow-col grid-cols-12 gap-2 h-14 items-center"
+      onClick={() => {
+        console.log("List Item Clieck");
+        // need to pass channel, programme
+        navigate("/weekly_chart", { state: { item: item } });
+      }}
+    >
+      <div className="row-span-2 col-span-2 text-md text-black font-semibold text-center">
         {item.rank}
       </div>
-      <div className="row-span-3 col-span-11 items-start">
+      <div className="row-span-2 col-span-8 content-start align-middle">
         <div className="row-span-1">
           <ChannelLogo channel={item.channel} />
         </div>
         <div className="row-span-2">{item.programme}</div>
       </div>
-      <div className="text-md text-black font-semibold text-center">
+      <div className="row-span-2 col-span-2 text-md text-black font-semibold text-center">
         {item.rating}%
       </div>
-
-      {/* <ListItem
-        alignItems="flex-start"
-        sx={{
-          m: 0.5,
-          p: 0.5,
-          margin: "auto",
-          flexGrow: 1,
-        }}
-      >
-        <ListItemButton
-          onClick={() => {
-            console.log("List Item Clieck");
-            navigate("/weekly_chart", { state: { item: item } }); // need to pass channel, programme
-          }}
-        >
-          <Grid sx={{ height: 52 }} container spacing={1}>
-            <Grid item aligItems="center" justifyContent="center" xs={1}>
-              <h3>{item.rank}</h3>
-            </Grid>
-            <Grid item container xs={9}>
-              <Grid
-                aligItems="center"
-                justifyContent="center"
-                direction="row"
-                container
-                sx={{ p: 1 }}
-              >
-                <Grid sx={{ height: 3 }} xs={12}>
-                  <ChannelLogo channel={item.channel} />
-                </Grid>
-                <Grid xs={12}>
-                  <h4>{item.programme}</h4>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid aligItems="center" justifyContent="center" item xs={2}>
-              <h4>{item.rating}%</h4>
-            </Grid>
-          </Grid>
-        </ListItemButton>
-      </ListItem>
-      <Divider /> */}
     </div>
   );
 };

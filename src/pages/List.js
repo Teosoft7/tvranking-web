@@ -122,11 +122,9 @@ const ListPage = () => {
         </AppBar>
 
         {ratings.length > 0 ? (
-          <TabPanel value={tab}>
-            <Box>
-              <RatingList ratings={ratings} />
-            </Box>
-          </TabPanel>
+          <Box>
+            <RatingList ratings={ratings} />
+          </Box>
         ) : (
           <></>
         )}
