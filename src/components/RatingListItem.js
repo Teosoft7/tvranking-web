@@ -1,10 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import Divider from "@mui/material/Divider";
-import Grid from "@mui/material/Grid";
-
 import ChannelLogo from "./ChannelLogo";
 
 const RatingListItem = (props) => {
@@ -13,7 +8,7 @@ const RatingListItem = (props) => {
 
   return (
     <div
-      className="grid grid-rows-2 grid-flow-col grid-cols-12 gap-2 h-14 items-center"
+      className="cursor-pointer grid grid-rows-2 grid-flow-col grid-cols-12 gap-2 h-14 items-center bg-white hover:bg-slate-300"
       onClick={() => {
         console.log("List Item Clieck");
         // need to pass channel, programme

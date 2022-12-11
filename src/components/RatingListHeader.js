@@ -10,7 +10,7 @@ const RatingListHeader = () => {
         <div className="col-span-8 text-md text-black font-semibold text-left">
           <h4>Programme</h4>
         </div>
-        <div className="col-span-2 text-md text-black font-semibold text-center">
+        <div className="col-span-2 text-md text-black font-semibold text-right">
           <h4>Rating</h4>
         </div>
       </div>
