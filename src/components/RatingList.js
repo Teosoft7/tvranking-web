@@ -7,7 +7,7 @@ const RatingList = (props) => {
   const { ratings } = props;
 
   return (
-    <div>
+    <div className="grid">
       <RatingListHeader />
       <Divider />
       {ratings ? (
