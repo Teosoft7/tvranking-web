@@ -2,36 +2,29 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import Logo from "./logo";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 
 const MainNavigation = (props) => {
   const navigate = useNavigate();
 
   return (
-    <Box>
-      <AppBar position="static">
-        <Toolbar>
-          <Box sx={{ flexGrow: 1 }}>
-            <Logo />
-          </Box>
-          <IconButton
-            size="large"
-            aria-label="help"
-            color="inherit"
-            onClick={() => {
-              // help icon button clicked
-              navigate("/about");
-            }}
-          >
-            <HelpOutlineIcon />
-          </IconButton>
-        </Toolbar>
-      </AppBar>
-    </Box>
+    <header className="bg-violet-700 sticky h-14 top-0 z-50 shadow-md">
+      <div className="container flex h-full items-center justify-between px-2 md:px-0">
+        <div className="flex gap-1 text-3xl font-bold text-slate-100 px-2 md:px-1">
+          <Logo />
+        </div>
+        <div
+          className="cursor-pointer items-center gap-2 text-slate-100 px-2 md:px-1"
+          onClick={() => {
+            // show help pannel
+            navigate("/about");
+            console.log("Header Clicked");
+          }}
+        >
+          <HelpOutlineIcon />
+        </div>
+      </div>
+    </header>
   );
 };
 
