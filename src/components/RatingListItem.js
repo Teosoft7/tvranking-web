@@ -18,14 +18,26 @@ const RatingListItem = (props) => {
       <div className="row-span-2 col-span-2 text-md text-black font-semibold text-center">
         {item.rank}
       </div>
-      <div className="row-span-2 col-span-8 content-start align-middle">
+      <div className="row-span-2 col-span-7 content-start align-middle">
         <div className="row-span-1">
           <ChannelLogo channel={item.channel} />
         </div>
         <div className="row-span-2">{item.programme}</div>
       </div>
-      <div className="row-span-2 col-span-2 text-md text-black font-semibold text-center">
-        {item.rating}%
+      <div className="row-span-2 col-span-3 p-6">
+        <div className="flex items-center">
+          <span className="mr-2 text-md text-black font-semibold text-center">
+            {item.rating}%
+          </span>
+          <div className="relative w-full">
+            <div className="overflow-hidden h-3 text-xs flex rounded bg-purple-200">
+              <div
+                style={{ width: item.rating * 2 + "%" }}
+                className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500"
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
